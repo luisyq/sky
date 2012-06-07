@@ -1,0 +1,19 @@
+SkyUsuarioBundle:
+    resource: "@SkyUsuarioBundle/Resources/config/routing.yml"
+    prefix:   /
+
+# Internal routing configuration to handle ESI
+#_internal:
+#   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#   prefix:   /_internal
+_comun:
+    resource: "@SkyUsuarioBundle/Resources/config/routing.yml"
+
+_usuario:
+    resource: "@SkyUsuarioBundle/Resources/config/usuario_routing.yml"
+    prefix:   /usuario/
+    
+_admin:
+    resource: "@SkyUsuarioBundle/Resources/config/admin_routing.yml"
+    prefix:   /admin/
+

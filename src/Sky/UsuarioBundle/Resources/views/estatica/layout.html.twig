@@ -1,0 +1,38 @@
+{%spaceless%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{%block cabecera%}{%endblock%}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{asset ('bundles/skyusuario/css/reset.css')}}" media="screen" />
+        <link rel="stylesheet" type="text/css" href="{{asset ('bundles/skyusuario/css/estilo.css')}}" media="screen" />
+        <script src="{{asset ('bundles/skyusuario/js/jquery-1.5.2.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset ('bundles/skyusuario/js/animacion.js')}}" type="text/javascript"></script>
+    </head>
+    <body>
+        <header class="back-fondo">
+            <form action="" method="get">
+                <div class="fondo">{%block logo%}{%endblock%}</div>
+                <div class="fondo2">
+                    <label>
+                        <input name="textfield" placeholder="Buscar..." type="search" id="textfield" size="30" maxlength="30" class="buscador"/>
+                    </label>
+                </div>
+            </form>
+        </header>
+        <div class="container">
+        {%block titulo%}{%endblock%}
+        {%block cuerpo%}{%endblock%}
+            </div>
+            <footer class="fot">
+                <span class="abajoi"><a href="{{ path('contactanos') }}">Contactanos</a></span>
+                <span class="abajoi"><a href="{{ path('plataforma') }}">Plataforma de Desarrollo</a></span>
+                <span class="abajoi"><a href="{{ path('mejorar') }}">Mejorar mi uso</a></span>
+                <span class="abajoi"><a href="#">Quienes Somos</a></span>
+                <span class="abajod"><a href="http://facebook.com">Facebook</a></span>
+                <span class="abajod"><a href="http://twitter.com">Twitter</a></span>
+                <span class="abajod"><a href="http://plus.google.com">Google+</a></span>
+            </footer>
+        </body>
+    </html>
+{%endspaceless%}

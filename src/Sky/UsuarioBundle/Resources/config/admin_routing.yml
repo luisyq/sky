@@ -1,0 +1,4 @@
+
+administrador:
+    pattern:  /admin/
+    defaults: { _controller: SkyUsuarioBundle:Usuario:index }

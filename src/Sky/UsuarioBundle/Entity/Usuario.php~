@@ -1,0 +1,101 @@
+<?php
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of Usuario
+ *
+ * @author ALF
+ */
+namespace Sky\UsuarioBundle\Entity;
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of usuario
+ *
+ * @author ALF
+ */
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Table(name="usuario")
+ * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Sky\UsuarioBundle\Entity\UsuarioRepository")
+ */
+class Usuario {
+
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string") 
+     */
+    protected $nick;
+
+    /**
+     * @ORM\Column(type="string") 
+     */
+    protected $nombre;
+
+    /**
+     * @ORM\Column(type="string") 
+     */
+    protected $email;
+
+    /**
+     * @ORM\Column(type="string") 
+     */
+    protected $password;
+
+    /**
+     * @ORM\Column(type="string", length="1") 
+     */
+    protected $sexo;
+
+    /**
+     * @ORM\Column(type="date") 
+     */
+    protected $fecha_nacimiento;
+
+    /**
+     * @ORM\Column(type="string") 
+     */
+    protected $ciudad;
+
+    /**
+     * @ORM\Column(type="integer") 
+     */
+    protected $seguridad;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $foto;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Grupo", inversedBy="usuario")
+     * @ORM\JoinTable(name="usuarios_grupos",
+     * joinColumns={@ORM\JoinColumn(name="usuario_id", referencedColumnName="id")},
+     * inverseJoinColumns={@ORM\JoinColumn(name="grupo_id", referencedColumnName="id")}
+     * )
+     */
+    protected $grupo;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Comentario", mappedBy="comentarios")
+     */
+    protected $comentarios;
+}
+
+?>

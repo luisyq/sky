@@ -1,0 +1,32 @@
+{%extends "SkyUsuarioBundle:estatica:layout.html.twig"%}
+{%block cabecera "sky"%}
+{%block titulo%}
+<div id="logo"><img alt="Sky" title="Sky" src="{{asset ('bundles/skyusuario/img/skyXL.png')}}"></div>
+    <form action="{{path('check_path')}}" method="post" id="login">
+        {#error.message#}
+        <p>Ingresa a tu cuenta</p><br>
+        <p><input name="_username" type="text" id="usuario" size="35" maxlength="35" placeholder="email" class="loginbox" value="{{last_name}}"></p><br>
+        <p><input name="_password" type="password" id="password" size="35" maxlength="35" placeholder="password" class="loginbox"></p>
+        <p><br><input type="submit" class="inicio" value="Iniciar Sesión"/></p><br>
+        <p><fb:login-button length="long" onlogin="location.href='<? echo $_SERVER['REQUEST_URI'];?>'"></fb:login-button>
+    <script type="text/javascript" src="HTTP://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php"></script>
+    <script type="text/javascript">
+    FB.init("123471964438506","checkpath");
+    </script></p>
+        <br>
+        <p><br><a class="inicio" href="{{path('registro')}}">No tienes una cuenta aún</a></p>
+    </form>
+{%endblock%}
+{%block cuerpo%}
+<div id="contenido">
+    <p>Comparte tu musica, tus videos, tus fotos, tus comentarios con tus mejores amigos</p>
+    <p>Registrate y podras interactuar de una nueva mejor forma y más rápida</p>
+    <p>Descargar app para iPhone iPad</p>
+    <p>Descargar app para Android</p>
+    <p>Descargar app para Blackberry</p>
+    <p>Descargar app para Windows Phone</p>
+    <p>Descargar app para Chrome</p>
+    <p>Descargar app para Firefox</p>
+    <p>Descargar app para Symbian</p>
+</div>
+{%endblock%}

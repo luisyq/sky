@@ -1,0 +1,7 @@
+parameters:
+#    sky_usuario.example.class: Sky\UsuarioBundle\Example
+
+services:
+#    sky_usuario.example:
+#        class: %sky_usuario.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

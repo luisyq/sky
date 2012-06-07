@@ -1,0 +1,15 @@
+{%extends "SkyUsuarioBundle:estatica:index.html.twig"%}
+{%block cabecera "Ingresa tus datos"%}
+{%block logo%}
+<a href="home.php"><img src="{{asset ('bundles/skyusuario/img/sky.png')}}" alt="sky"></a>
+{%endblock%}
+{%block titulo%}
+<p>Unete a esta nueva red de contactos</p>
+{%endblock%}
+{%block cuerpo%}
+<h1><p>Registro de Nuevos Usuarios</p></h1>
+<form action="{{path('registro')}}" method="post">
+{{form_rest (form)}}
+ <p><br><input type="submit" class="inicio" value="Resgistrarme" /></p><br>
+ </fomr>
+{%endblock%}

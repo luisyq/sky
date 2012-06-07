@@ -1,0 +1,28 @@
+security:
+    access_denied_url: /index
+    always_authenticate_before_granting: true
+    firewalls:
+        secured_area:
+            pattern:    ^/
+            anonymous:  ~
+            form_login:
+                login_path:  /index
+                check_path:  /usuario/check
+                default_target_path: /usuario/home
+            logout:
+                path:   /usuario/logout
+                target: /index
+                delete_cookies:
+                    PHPSESSID: { path: here, domain: and }
+                invalidate_session: true
+    access_denied_url: /index
+    access_control: 
+        - { path: ^/perfil   , roles: ROLE_USER }
+    providers: 
+        main:
+          entity:
+            class:  Sky\UsuarioBundle\Entity\Usuario
+            property: email
+    encoders: 
+        Symfony\Component\Security\Core\User\User: plaintext
+        Sky\UsuarioBundle\Entity\Usuario: plaintext

@@ -1,0 +1,27 @@
+SkyUsuarioBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: SkyUsuarioBundle:Default:index }
+
+index:
+  pattern: /index
+  defaults: {_controller: SkyUsuarioBundle:Default:index}
+  
+registro:
+  pattern: /registro
+  defaults: {_controller: SkyUsuarioBundle:Default:registro}
+  
+base:
+  pattern: /usuario/registra2
+  defaults: { _controller: SkyUsuarioBundle:Usuario:index}
+  
+plataforma:
+  pattern: /plataforma
+  defaults: { _controller: SkyUsuarioBundle:Default:plataforma}
+  
+contactanos:
+  pattern: /contactanos
+  defaults: { _controller: SkyUsuarioBundle:Default:contactanos}
+  
+mejorar:
+  pattern: /mejorar
+  defaults: { _controller: SkyUsuarioBundle:Default:mejorar}

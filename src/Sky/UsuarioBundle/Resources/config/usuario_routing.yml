@@ -1,0 +1,33 @@
+check_path:
+  pattern: /check
+  
+logout:
+    pattern:  /logout
+ 
+home:
+  pattern: /home
+  defaults: { _controller: SkyUsuarioBundle:Usuario:home }
+
+config:
+  pattern: /config
+  defaults: { _controller: SkyUsuarioBundle:Usuario:config}
+  
+perfil:
+  pattern: /perfil
+  defaults: { _controller: SkyUsuarioBundle:Usuario:perfil}
+  
+grupos:
+  pattern: /config
+  defaults: { _controller: SkyUsuarioBundle:Usuario:grupos}
+  
+agenda:
+  pattern: /config
+  defaults: { _controller: SkyUsuarioBundle:Usuario:agenda}
+
+lugares:
+  pattern: /config
+  defaults: { _controller: SkyUsuarioBundle:Usuario:lugares}
+
+denegado:
+    pattern:  /denegado
+    defaults: { _controller: SkyUsuarioBundle:Usuario:denegado }

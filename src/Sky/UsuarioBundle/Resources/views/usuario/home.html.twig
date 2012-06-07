@@ -1,0 +1,38 @@
+{%extends "SkyUsuarioBundle:usuario:layout.html.twig"%}
+{% block cabecera 'Home' %}
+{% block izquierda %}
+<div>
+    <p><img src="{{usuario.foto}}" title="{{usuario.nombre}}"></p>
+    <p>{{ usuario.nick }}</p>
+    <p>{{ usuario.email }}</p>
+    <p>Mis Grupos de Amigos</p>
+    <p>Usuarios Conectados</p>
+</div>
+{% endblock %}
+{% block centro %}
+<p>Ultimas Noticias</p>
+<div id="comentar">
+    <form action="{{ path('home') }}" method="post">
+    {{form_rest (form)}}
+            <p><input type="submit" class="inicio" value="Comentar" /></p><br>
+        </form>
+    </div>
+    {% for comentario in comentarios%}
+<div class="comentarios"><span><img src="{{comentario.foto}}" width="50" height="50"></span>
+        <span><a href="#">{{ comentario.nick }}</a></span><span>{{ comentario.contenido }}</span>
+    </div>
+    {% else %}
+    <p>Aun no hay comentarios recientes</p>      
+    {% endfor %}
+{% endblock %}
+{% block derecha %}
+    <p>Tal vez conozcas estas personas</p>
+    <div>
+        {% for contacto in contactos %}
+            <img src="{{contacto.foto}}" height="100" width="100" alt="{{contacto.nombre}}" title="{{contacto.nombre}}">            
+            <p>{{contacto.nombre}}</p>
+        {%else%}
+            <p>Aun no existen contactos</p>
+        {%endfor%}
+        </div>
+{% endblock %}

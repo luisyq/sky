@@ -1,0 +1,51 @@
+<?php
+namespace Sky\UsuarioBundle\Entity;
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of comentario
+ *
+ * @author ALF
+ */
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Table(name="comentario")
+ * @ORM\Entity
+ */
+class Comentario {
+
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    protected $id;
+    
+    /**
+     * @ORM\Column(type="integer") 
+     */
+    protected $para;
+    
+    /**
+     * @ORM\Column(type="string") 
+     */
+    protected $contenido;
+    
+    /**
+     * @ORM\Column(type="date") 
+     */
+    protected $fecha;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Usuario", inversedBy="comentarios")
+     * @ORM\JoinColumn(name="usuario_id", referencedColumnName="id")
+     */
+    protected $usuario;
+}
+
+?>
